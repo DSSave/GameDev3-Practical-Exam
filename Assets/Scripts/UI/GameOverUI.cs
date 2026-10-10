@@ -18,6 +18,10 @@ namespace Chisanuphong
 
         private void Start()
         {
+            Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             if (sceneController == null)
             {
                 sceneController = gameObject.AddComponent<SceneController>();
