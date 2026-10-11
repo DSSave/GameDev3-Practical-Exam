@@ -17,4 +17,4 @@ MonoBehaviour:
   scoreModifier: 500
   timeModifier: 0
   itemColor: {r: 1, g: 0.85, b: 0.1, a: 1}
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: ac1a6d45c873d224a9b448f54950df03, type: 3}

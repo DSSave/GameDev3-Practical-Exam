@@ -826,7 +826,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1521542766}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 624047713}
+        m_TargetAssemblyTypeName: Chisanuphong.SceneController, Assembly-CSharp
+        m_MethodName: LoadMainMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1521542766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,7 +1017,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1526353886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 624047713}
+        m_TargetAssemblyTypeName: Chisanuphong.SceneController, Assembly-CSharp
+        m_MethodName: LoadStage1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1596542744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1622,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797065326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 624047713}
+        m_TargetAssemblyTypeName: Chisanuphong.SceneController, Assembly-CSharp
+        m_MethodName: LoadStage2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2070079231
 GameObject:
   m_ObjectHideFlags: 0

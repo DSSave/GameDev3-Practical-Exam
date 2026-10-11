@@ -239,7 +239,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4118259}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1334187002}
+        m_TargetAssemblyTypeName: Chisanuphong.GameOverUI, Assembly-CSharp
+        m_MethodName: OnTryAgainClicked
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &151776214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,7 +1305,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &1611318627
 GameObject:
@@ -1357,7 +1369,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1611318629}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1334187002}
+        m_TargetAssemblyTypeName: Chisanuphong.GameOverUI, Assembly-CSharp
+        m_MethodName: OnMainMenuClicked
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1611318629
 MonoBehaviour:
   m_ObjectHideFlags: 0

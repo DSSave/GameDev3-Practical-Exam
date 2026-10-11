@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Chisanuphong
 {
@@ -8,6 +9,11 @@ namespace Chisanuphong
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip defaultBonusSfx;
         [SerializeField] private AudioClip defaultPenaltySfx;
+
+        [Header("Collection Mode")]
+        [SerializeField] private bool allowTriggerPickup = false;
+
+        public bool AllowTriggerPickup { get => allowTriggerPickup; set => allowTriggerPickup = value; }
 
         private void Awake()
         {
@@ -25,13 +31,12 @@ namespace Chisanuphong
 
         private void OnTriggerEnter(Collider other)
         {
-            ItemPickup item = other.GetComponent<ItemPickup>();
-            if (item == null)
-            {
-                item = other.GetComponentInParent<ItemPickup>();
-            }
+            // Stage 2 strictly requires interaction via [E] instead of collision per Exam Q.8
+            if (!allowTriggerPickup) return;
+            if (SceneManager.GetActiveScene().name == GameManager.SceneStage2) return;
 
-            if (item != null)
+            ItemPickup item = other.GetComponent<ItemPickup>() ?? other.GetComponentInParent<ItemPickup>();
+            if (item != null && !item.RequireInteraction)
             {
                 CollectItem(item);
             }

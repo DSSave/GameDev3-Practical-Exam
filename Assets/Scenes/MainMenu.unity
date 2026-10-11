@@ -892,7 +892,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1291040743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 624047713}
+        m_TargetAssemblyTypeName: Chisanuphong.SceneController, Assembly-CSharp
+        m_MethodName: LoadOptions
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1337887252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1542,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1526353886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 624047713}
+        m_TargetAssemblyTypeName: Chisanuphong.SceneController, Assembly-CSharp
+        m_MethodName: LoadCredits
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1596542744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,7 +2052,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1787160472}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 624047713}
+        m_TargetAssemblyTypeName: Chisanuphong.SceneController, Assembly-CSharp
+        m_MethodName: LoadStageSelection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1797065324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,7 +2185,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797065326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 624047713}
+        m_TargetAssemblyTypeName: Chisanuphong.SceneController, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1962754535
 GameObject:
   m_ObjectHideFlags: 0

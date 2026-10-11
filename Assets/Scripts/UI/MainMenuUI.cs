@@ -9,7 +9,7 @@ namespace Chisanuphong
         [Header("Scene Controller")]
         [SerializeField] private SceneController sceneController;
 
-        [Header("Buttons")]
+        [Header("Buttons (Wired via Inspector On Click ())")]
         [SerializeField] private Button startButton;
         [SerializeField] private Button optionsButton;
         [SerializeField] private Button creditsButton;
@@ -25,18 +25,6 @@ namespace Chisanuphong
             {
                 sceneController = gameObject.AddComponent<SceneController>();
             }
-
-            if (startButton != null)
-                startButton.onClick.AddListener(sceneController.LoadStageSelection);
-
-            if (optionsButton != null)
-                optionsButton.onClick.AddListener(sceneController.LoadOptions);
-
-            if (creditsButton != null)
-                creditsButton.onClick.AddListener(sceneController.LoadCredits);
-
-            if (exitButton != null)
-                exitButton.onClick.AddListener(sceneController.QuitGame);
 
             if (studentInfoText != null)
             {

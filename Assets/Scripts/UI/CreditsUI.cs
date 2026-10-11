@@ -15,7 +15,7 @@ namespace Chisanuphong
         [SerializeField] private TextMeshProUGUI studentNameText;
         [SerializeField] private TextMeshProUGUI departmentText;
 
-        [Header("Buttons")]
+        [Header("Buttons (Wired via Inspector On Click ())")]
         [SerializeField] private Button backButton;
 
         private void Awake()
@@ -36,9 +36,6 @@ namespace Chisanuphong
 
             if (departmentText != null)
                 departmentText.text = "Department of Digital Game\nCollege of Arts, Media and Technology\nChiang Mai University";
-
-            if (backButton != null)
-                backButton.onClick.AddListener(sceneController.LoadMainMenu);
         }
     }
 }
