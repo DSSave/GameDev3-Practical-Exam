@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 namespace Chisanuphong
@@ -9,6 +10,7 @@ namespace Chisanuphong
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip defaultBonusSfx;
         [SerializeField] private AudioClip defaultPenaltySfx;
+        [SerializeField] private AudioMixerGroup sfxMixerGroup;
 
         [Header("Collection Mode")]
         [SerializeField] private bool allowTriggerPickup = false;
@@ -26,6 +28,11 @@ namespace Chisanuphong
                     audioSource.playOnAwake = false;
                     audioSource.spatialBlend = 0f; // 2D UI style
                 }
+            }
+
+            if (sfxMixerGroup != null && audioSource.outputAudioMixerGroup == null)
+            {
+                audioSource.outputAudioMixerGroup = sfxMixerGroup;
             }
         }
 

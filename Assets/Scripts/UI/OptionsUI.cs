@@ -12,11 +12,16 @@ namespace Chisanuphong
         [Header("Scene Controller")]
         [SerializeField] private SceneController sceneController;
 
+        [Header("Sound Manager")]
+        [SerializeField] private SoundManager soundManager;
+
         [Header("Sliders")]
+        [SerializeField] private Slider masterSlider;
         [SerializeField] private Slider bgmSlider;
         [SerializeField] private Slider sfxSlider;
 
         [Header("Percentage Value Texts")]
+        [SerializeField] private TextMeshProUGUI masterValueText;
         [SerializeField] private TextMeshProUGUI bgmValueText;
         [SerializeField] private TextMeshProUGUI sfxValueText;
 
@@ -83,21 +88,27 @@ namespace Chisanuphong
                 sceneController = gameObject.AddComponent<SceneController>();
             }
 
-            float savedBgm = PlayerPrefs.GetFloat(GameManager.BGMVolumeKey, 0.75f);
-            float savedSfx = PlayerPrefs.GetFloat(GameManager.SFXVolumeKey, 0.75f);
+            if (soundManager == null)
+            {
+                soundManager = GetComponent<SoundManager>() ?? Object.FindAnyObjectByType<SoundManager>();
+            }
+
+            if (masterSlider != null)
+            {
+                masterSlider.onValueChanged.AddListener(OnMasterChanged);
+                UpdateMasterText(masterSlider.value);
+            }
 
             if (bgmSlider != null)
             {
-                bgmSlider.value = savedBgm;
                 bgmSlider.onValueChanged.AddListener(OnBGMChanged);
-                UpdateBGMText(savedBgm);
+                UpdateBGMText(bgmSlider.value);
             }
 
             if (sfxSlider != null)
             {
-                sfxSlider.value = savedSfx;
                 sfxSlider.onValueChanged.AddListener(OnSFXChanged);
-                UpdateSFXText(savedSfx);
+                UpdateSFXText(sfxSlider.value);
             }
         }
 
@@ -149,30 +160,52 @@ namespace Chisanuphong
             return false;
         }
 
-        private void OnBGMChanged(float val)
+        public void OnMasterChanged(float val)
         {
-            PlayerPrefs.SetFloat(GameManager.BGMVolumeKey, val);
-            PlayerPrefs.Save();
+            if (soundManager != null)
+                soundManager.SetMasterVolume(val);
+            UpdateMasterText(val);
+        }
+
+        public void OnBGMChanged(float val)
+        {
+            if (soundManager != null)
+                soundManager.SetMusicVolume(val);
             UpdateBGMText(val);
         }
 
-        private void OnSFXChanged(float val)
+        public void OnSFXChanged(float val)
         {
-            PlayerPrefs.SetFloat(GameManager.SFXVolumeKey, val);
-            PlayerPrefs.Save();
+            if (soundManager != null)
+                soundManager.SetSFXVolume(val);
             UpdateSFXText(val);
+        }
+
+        private void UpdateMasterText(float val)
+        {
+            if (masterValueText != null)
+            {
+                float pct = Mathf.InverseLerp(-80f, 20f, val);
+                masterValueText.text = Mathf.RoundToInt(pct * 100f) + "%";
+            }
         }
 
         private void UpdateBGMText(float val)
         {
             if (bgmValueText != null)
-                bgmValueText.text = Mathf.RoundToInt(val * 100f) + "%";
+            {
+                float pct = Mathf.InverseLerp(-80f, 20f, val);
+                bgmValueText.text = Mathf.RoundToInt(pct * 100f) + "%";
+            }
         }
 
         private void UpdateSFXText(float val)
         {
             if (sfxValueText != null)
-                sfxValueText.text = Mathf.RoundToInt(val * 100f) + "%";
+            {
+                float pct = Mathf.InverseLerp(-80f, 20f, val);
+                sfxValueText.text = Mathf.RoundToInt(pct * 100f) + "%";
+            }
         }
     }
 }
