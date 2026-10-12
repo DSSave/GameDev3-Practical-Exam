@@ -15106,19 +15106,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1660057539 &9223372036854775807
-SceneRoots:
-  m_ObjectHideFlags: 0
-  m_Roots:
-  - {fileID: 885018657}
-  - {fileID: 1795455288}
-  - {fileID: 1032282125}
-  - {fileID: 1334187004}
-  - {fileID: 9085598223156370439}
-  - {fileID: 682667681}
-  - {fileID: 24993629}
-  - {fileID: 155455906}
-  - {fileID: 49907633}
 --- !u!1 &2147000050
 GameObject:
   m_ObjectHideFlags: 0
@@ -15196,3 +15183,15 @@ MonoBehaviour:
   bgmClip: {fileID: 8300000, guid: 0e436d4683886f247b59d0f9da5c07e6, type: 3}
   musicMixerGroup: {fileID: 24300008, guid: ae05ed9316d2c804e97f0e5ae75099bd, type: 2}
   soundSettings: {fileID: 11400000, guid: a11d1000000000000000000000000005, type: 2}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 49907633}
+  - {fileID: 155455906}
+  - {fileID: 885018657}
+  - {fileID: 1032282125}
+  - {fileID: 1334187004}
+  - {fileID: 1795455288}
+  - {fileID: 9085598223156370439}
+  - {fileID: 2147000051}

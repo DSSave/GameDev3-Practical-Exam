@@ -1710,15 +1710,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070079231}
   m_CullTransparentMesh: 1
---- !u!1660057539 &9223372036854775807
-SceneRoots:
-  m_ObjectHideFlags: 0
-  m_Roots:
-  - {fileID: 1771172012}
-  - {fileID: 745348071}
-  - {fileID: 5109673}
-  - {fileID: 1364209403}
-  - {fileID: 624047714}
 --- !u!1 &2147000050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,3 +1787,13 @@ MonoBehaviour:
   bgmClip: {fileID: 8300000, guid: 0e436d4683886f247b59d0f9da5c07e6, type: 3}
   musicMixerGroup: {fileID: 24300008, guid: ae05ed9316d2c804e97f0e5ae75099bd, type: 2}
   soundSettings: {fileID: 11400000, guid: a11d1000000000000000000000000005, type: 2}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 5109673}
+  - {fileID: 624047714}
+  - {fileID: 745348071}
+  - {fileID: 1364209403}
+  - {fileID: 1771172012}
+  - {fileID: 2147000051}

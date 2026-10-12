@@ -1687,15 +1687,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1660057539 &9223372036854775807
-SceneRoots:
-  m_ObjectHideFlags: 0
-  m_Roots:
-  - {fileID: 1387448244}
-  - {fileID: 1133873615}
-  - {fileID: 2104654241}
-  - {fileID: 1390091690}
-  - {fileID: 1523379709}
 --- !u!1 &2147000050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,3 +1764,13 @@ MonoBehaviour:
   bgmClip: {fileID: 8300000, guid: 0e436d4683886f247b59d0f9da5c07e6, type: 3}
   musicMixerGroup: {fileID: 24300008, guid: ae05ed9316d2c804e97f0e5ae75099bd, type: 2}
   soundSettings: {fileID: 11400000, guid: a11d1000000000000000000000000005, type: 2}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 1133873615}
+  - {fileID: 1387448244}
+  - {fileID: 1390091690}
+  - {fileID: 1523379709}
+  - {fileID: 2104654241}
+  - {fileID: 2147000051}
