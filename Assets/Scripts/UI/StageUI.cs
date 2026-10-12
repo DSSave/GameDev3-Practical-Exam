@@ -53,7 +53,6 @@ namespace Chisanuphong
 
         private void OnSceneUnloadEventHandler(Scene scene)
         {
-            // Per Chapter 6: When Options scene is unloaded, resume gameplay seamlessly
             if (scene.name == GameManager.SceneOptions)
             {
                 isPaused = false;
@@ -103,7 +102,6 @@ namespace Chisanuphong
         {
             if (isGameEnding) return;
 
-            // If Options is currently open, skip gameplay input and timer
             if (GameManager.IsSceneOptionsLoaded || isPaused) return;
 
             // Esc key navigates to Scene Option
@@ -113,17 +111,16 @@ namespace Chisanuphong
                 return;
             }
 
-            // Alt / Tab toggles cursor lock so HUD buttons can be clicked
             UpdateCursorToggle();
 
-            // 1. Fall detection (Losing Condition 1)
+            // Fall detection
             if (playerTransform != null && playerTransform.position.y < fallThresholdY)
             {
                 TriggerGameOver();
                 return;
             }
 
-            // 2. Countdown timer
+            // Countdown timer
             if (runCountdown)
             {
                 if (GameManager.RemainingTime > 0f)
@@ -133,7 +130,6 @@ namespace Chisanuphong
                         GameManager.RemainingTime = 0f;
                 }
 
-                // Check time expiration (Both regular ticking AND negative item collection!)
                 if (GameManager.RemainingTime <= 0f)
                 {
                     GameManager.RemainingTime = 0f;
@@ -159,7 +155,6 @@ namespace Chisanuphong
             Time.timeScale = 0f;
             SetCursorLocked(false);
 
-            // Chapter 6: Load WinScreen scene additively on top of the stage
             GameManager.LoadWinScene();
         }
 
@@ -171,7 +166,6 @@ namespace Chisanuphong
             Time.timeScale = 0f;
             SetCursorLocked(false);
 
-            // Chapter 6: Load GameOverScreen scene additively on top of the stage
             GameManager.LoadGameOverScene();
         }
 

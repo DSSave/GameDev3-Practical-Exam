@@ -35,7 +35,6 @@ namespace Chisanuphong
 
             if (UnityEngine.SceneManagement.SceneManager.sceneCount > 1 || GameManager.IsSceneOptionsLoaded)
             {
-                // Additive mode per Chapter 6
                 Time.timeScale = 0f;
                 SetupAdditiveMode();
             }
@@ -47,7 +46,6 @@ namespace Chisanuphong
 
         private void SetupAdditiveMode()
         {
-            // Per Chapter 6 Section 6.9: Disable extra Camera, AudioListener, and Light in Options scene
             var rootObjects = gameObject.scene.GetRootGameObjects();
             foreach (var root in rootObjects)
             {
@@ -67,7 +65,6 @@ namespace Chisanuphong
                 }
             }
 
-            // Resolve duplicate EventSystems if one already exists in the calling scene
             var allEventSystems = Object.FindObjectsByType<UnityEngine.EventSystems.EventSystem>(FindObjectsInactive.Exclude);
             if (allEventSystems.Length > 1)
             {

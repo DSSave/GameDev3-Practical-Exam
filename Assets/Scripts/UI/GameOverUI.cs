@@ -78,7 +78,6 @@ namespace Chisanuphong
                 scoreText.text = $"Score : {GameManager.CurrentScore:D5}";
             }
 
-            // Force layout rebuild so button rects are immediately valid for raycasting
             var card = transform.Find("Canvas/GameOverCard") ?? transform.Find("GameOverCard");
             if (card != null)
             {
@@ -86,7 +85,6 @@ namespace Chisanuphong
                 if (rt != null) LayoutRebuilder.ForceRebuildLayoutImmediate(rt);
             }
 
-            // Highlight/select Try Again button for immediate accessibility
             if (tryAgainButton != null && UnityEngine.EventSystems.EventSystem.current != null)
             {
                 UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(tryAgainButton.gameObject);
@@ -117,7 +115,6 @@ namespace Chisanuphong
                 Cursor.visible = true;
             }
 
-            // Keyboard navigation support
 #if ENABLE_INPUT_SYSTEM
             if (Keyboard.current != null)
             {

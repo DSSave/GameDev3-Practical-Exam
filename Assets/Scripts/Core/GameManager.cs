@@ -55,7 +55,6 @@ namespace Chisanuphong
 
         private void SceneLoadedEventHandler(Scene scene, LoadSceneMode mode)
         {
-            // Per Chapter 6 Source Code 6.5: If loaded scene is not Options/Win/GameOver, reset flags
             if (scene.name.CompareTo(SceneOptions) != 0)
                 IsSceneOptionsLoaded = false;
             if (scene.name.CompareTo(SceneWin) != 0)
@@ -69,7 +68,6 @@ namespace Chisanuphong
             CurrentScore = 0;
             RemainingTime = 30f;
             
-            // Normalize stage name to ensure it matches the actual scene in Build Settings
             if (string.IsNullOrEmpty(stageName) || stageName.Contains("Stage 1") || stageName.Contains("Stage1") || stageName.Contains("Capsule"))
             {
                 LastPlayedStage = SceneStage1;
@@ -98,7 +96,6 @@ namespace Chisanuphong
             RemainingTime = Mathf.Max(0f, RemainingTime + seconds);
         }
 
-        // --- Chapter 6 Section 6.2.1 / Source Code 6.5 Additive Scene Methods ---
         public static void LoadOptionsScene(string optionSceneName = SceneOptions)
         {
             if (!IsSceneOptionsLoaded)

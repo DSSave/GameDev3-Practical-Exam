@@ -20,6 +20,7 @@ namespace Chisanuphong
 
         public ItemData Data => itemData;
         public bool RequireInteraction { get => requireInteraction; set => requireInteraction = value; }
+        public bool IsCollected => isCollected;
 
         public string InteractionPrompt
         {
@@ -55,7 +56,6 @@ namespace Chisanuphong
 
         private void OnTriggerEnter(Collider other)
         {
-            // Stage 2 strictly requires interaction via [E] instead of collision per Exam Q.8
             if (isCollected || requireInteraction) return;
             if (SceneManager.GetActiveScene().name == GameManager.SceneStage2) return;
 
@@ -112,6 +112,8 @@ namespace Chisanuphong
         {
             if (isCollected) return;
             isCollected = true;
+            Collider col = GetComponent<Collider>();
+            if (col != null) col.enabled = false;
             Destroy(gameObject);
         }
     }

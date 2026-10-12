@@ -38,12 +38,11 @@ namespace Chisanuphong
 
         private void OnTriggerEnter(Collider other)
         {
-            // Stage 2 strictly requires interaction via [E] instead of collision per Exam Q.8
             if (!allowTriggerPickup) return;
             if (SceneManager.GetActiveScene().name == GameManager.SceneStage2) return;
 
             ItemPickup item = other.GetComponent<ItemPickup>() ?? other.GetComponentInParent<ItemPickup>();
-            if (item != null && !item.RequireInteraction)
+            if (item != null && !item.RequireInteraction && !item.IsCollected)
             {
                 CollectItem(item);
             }
@@ -51,7 +50,9 @@ namespace Chisanuphong
 
         public void CollectItem(ItemPickup item)
         {
-            if (item == null || item.Data == null) return;
+            if (item == null || item.Data == null || item.IsCollected) return;
+
+            item.Collect();
 
             ItemData data = item.Data;
 
@@ -78,9 +79,6 @@ namespace Chisanuphong
             {
                 audioSource.PlayOneShot(clipToPlay);
             }
-
-            // Destroy item
-            item.Collect();
         }
     }
 }
